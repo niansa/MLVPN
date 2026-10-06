@@ -1,10 +1,11 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/rules/autoreconf.mk
-include /usr/share/cdbs/1/class/autotools.mk
+%:
+	dh $@
 
-DEB_CONFIGURE_EXTRA_FLAGS = --without-install-examples
-DEB_CONFIGURE_EXTRA_FLAGS += --with-systemdsystemunitdir=/lib/systemd/system
-DEB_CONFIGURE_EXTRA_FLAGS += --with-systemdsystemgeneratordir=/lib/systemd/system-generators
-DEB_CONFIGURE_EXTRA_FLAGS += --with-systemdtmpfilesdir=/usr/lib/tmpfiles.d
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--without-install-examples \
+		--with-systemdsystemunitdir=/lib/systemd/system \
+		--with-systemdsystemgeneratordir=/lib/systemd/system-generators \
+		--with-systemdtmpfilesdir=/usr/lib/tmpfiles.d

@@ -2,18 +2,16 @@ Source: mlvpn
 Maintainer: Laurent Coustet <ed@zehome.com>
 Section: net
 Priority: optional
-Standards-Version: 3.9.6
-Build-Depends: debhelper (>= 5),
-               cdbs,
-               dh-autoreconf,
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13),
                libev-dev,
                libpcap-dev,
                libsodium-dev,
-               pkg-config,
-               ruby-ronn
+               pkgconf,
+               ronn
 Build-Conflicts: autoconf2.13, automake1.4
-Vcs-Git: https://git@github.com/zehome/MLVPN.git
-Vcs-browser: https://github.com/zehome/MLVPN.git
+Vcs-Git: https://github.com/zehome/MLVPN.git
+Vcs-Browser: https://github.com/zehome/MLVPN.git
 Homepage: http://www.mlvpn.fr/
 
 Package: mlvpn
